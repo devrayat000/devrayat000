@@ -1,7 +1,8 @@
 - 👋 Hi, I’m @devrayat000
 - 👨🏻‍🎓 A student of Mechanical Engineering
-- 🏫 Currently studying undergraduate at Bnagladesh University of Engineering and Technology
+- 🏫 Currently studying undergraduate at Bangladesh University of Engineering and Technology
 - 👀 I’m interested in Full-stack development, Data Science, Database Management, Deep Learning, Machine Learning
+- 🏃🏻‍♂️‍➡️ I'm skilled in Javascript, Python, Go (golang), Kotlin.
 - 💞️ I like to do a lots of personal projects as a hobby
 - 📫 How to reach me: rayathossain49@gmail.com, [https://x.com/zul_rayat](https://x.com/zul_rayat)
 
