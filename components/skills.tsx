@@ -82,23 +82,29 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 bg-background">
+    <section id="skills" className="py-24 bg-muted/10">
       <div className="container px-4 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-16 md:pl-8"
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">
-            Skills & Expertise
+          <div className="flex items-center gap-2 mb-4">
+            <div className="h-1 w-12 bg-primary rounded-full"></div>
+            <span className="text-sm font-medium tracking-widest text-primary uppercase">
+              Expertise
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Technical Arsenal
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical abilities and tools I use.
+          <p className="text-muted-foreground max-w-2xl text-lg">
+            The tools and technologies I use to bring ideas to life.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:px-8">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
@@ -106,25 +112,21 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
+              className="space-y-4"
             >
-              <Card className="h-full border-border/50 bg-background/50 backdrop-blur-sm hover:border-primary/50 transition-colors">
-                <CardHeader>
-                  <CardTitle className="text-center">
-                    {category.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="flex flex-wrap gap-2 justify-center">
-                  {category.skills.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="font-normal"
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </CardContent>
-              </Card>
+              <h3 className="text-xl font-bold border-b border-border/50 pb-2">
+                {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <div
+                    key={skill}
+                    className="px-3 py-1.5 bg-background border border-border/50 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors cursor-default"
+                  >
+                    {skill}
+                  </div>
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>

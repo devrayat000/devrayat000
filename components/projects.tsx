@@ -56,88 +56,96 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 bg-muted/30">
+    <section id="projects" className="py-32 bg-background relative">
       <div className="container px-4 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 text-center"
+          className="mb-20"
         >
-          <h2 className="text-3xl font-bold tracking-tight mb-4">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="h-1 w-12 bg-primary rounded-full"></div>
+            <span className="text-sm font-medium tracking-widest text-primary uppercase">
+              Portfolio
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
             Featured Work
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A selection of projects that showcase my passion for building clean,
-            efficient, and scalable web applications.
+          <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed">
+            A selection of projects where I've architected scalable solutions
+            and solved complex engineering problems.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="group"
             >
-              <Card className="overflow-hidden border-border/50 bg-background/50 backdrop-blur-sm hover:border-primary/50 transition-colors duration-300 h-full flex flex-col group">
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <Button
-                      size="icon"
-                      variant="secondary"
-                      className="rounded-full"
-                      asChild
+              <div className="relative overflow-hidden rounded-2xl aspect-[16/9] mb-6 border border-border/50 bg-muted">
+                <div className="absolute inset-0 z-10 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
+                  <Button variant="default" className="rounded-full" asChild>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
                     >
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </Button>
-                    <Button
-                      size="icon"
-                      variant="secondary"
-                      className="rounded-full"
-                      asChild
+                      <ExternalLink className="w-4 h-4" /> Visit
+                    </a>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="rounded-full bg-background/20 backdrop-blur-md border-white/20 text-white hover:bg-white/20"
+                    asChild
+                  >
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
                     >
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="w-4 h-4" />
-                      </a>
-                    </Button>
-                  </div>
+                      <Github className="w-4 h-4" /> Code
+                    </a>
+                  </Button>
                 </div>
-                <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="mt-auto">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge
-                        key={tag}
-                        variant="secondary"
-                        className="bg-secondary/50 font-normal"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              <div className="space-y-3">
+                <div className="flex justify-between items-start">
+                  <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
+
+                <p className="text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs font-mono text-muted-foreground/80 border border-border px-2 py-1 rounded-md"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
