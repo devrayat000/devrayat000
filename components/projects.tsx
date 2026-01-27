@@ -13,32 +13,42 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Project Alpha",
+    title: "TopperOn Doubts AI",
     description:
-      "A comprehensive dashboard for analytics with real-time data visualization.",
-    tags: ["Next.js", "TypeScript", "Tailwind"],
+      "AI-powered student doubt solver with a full RAG pipeline, reducing query latency by 35% and improving context relevance.",
+    tags: ["FastAPI", "Next.js", "RAG", "Pinecone", "Redis"],
     image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2664&auto=format&fit=crop",
     link: "#",
     github: "#",
   },
   {
-    title: "E-Commerce Plate",
+    title: "Taalaash Search Engine",
     description:
-      "Modern e-commerce platform with stripe integration and headless CMS.",
-    tags: ["React", "Node.js", "Stripe"],
+      "Bangla academic search engine indexing 20,000+ pages with OCR + ML. Custom-tuned Tesseract models achieving 98% accuracy.",
+    tags: ["Next.js", "Python", "OCR", "Algolia"],
     image:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=2664&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2667&auto=format&fit=crop",
     link: "#",
     github: "#",
   },
   {
-    title: "SaaS Starter",
+    title: "Ronon EdTech Platform",
     description:
-      "Production ready SaaS boilerplate with auth, database and subscriptions.",
-    tags: ["Next.js", "Prisma", "Postgres"],
+      "Real-time doubt-solving platform scaling to 80,000+ users. Integrated LaTeX rendering and optimized Django queries.",
+    tags: ["Django", "React", "PostgreSQL", "Real-time"],
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2670&auto=format&fit=crop",
+    link: "#",
+    github: "#",
+  },
+  {
+    title: "Video Transcoding Pipeline",
+    description:
+      "Scalable video processing system using Go and Redis Streams. Handles failure modes and distributed processing with FFmpeg.",
+    tags: ["Go", "Redis Streams", "FFmpeg", "React"],
+    image:
+      "https://images.unsplash.com/photo-1547027072-332eed9f9998?q=80&w=2670&auto=format&fit=crop",
     link: "#",
     github: "#",
   },

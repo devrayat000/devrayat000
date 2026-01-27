@@ -4,8 +4,9 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
   // Set the base path to your repository name, including a leading slash
-  basePath: "/devrayat000",
-  assetPrefix: "/devrayat000/", // Ensures assets like images/CSS load correctly
+  basePath: process.env.NODE_ENV === "production" ? "/devrayat000" : undefined,
+  assetPrefix:
+    process.env.NODE_ENV === "production" ? "/devrayat000" : undefined, // Ensures assets like images/CSS load correctly
 };
 
 export default nextConfig;

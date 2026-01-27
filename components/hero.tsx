@@ -23,45 +23,66 @@ export function Hero() {
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full pointer-events-none opacity-20" />
 
-      <div className="container px-4 text-center z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <motion.span
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-block px-3 py-1 mb-6 text-xs font-medium tracking-wider text-primary uppercase bg-primary/10 rounded-full border border-primary/20"
+      <div className="container px-4 z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+          <motion.div
+            className="flex-1 text-center md:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            Available for hire
-          </motion.span>
-          <h1 className="text-5xl md:text-8xl font-bold tracking-tighter mb-8 bg-gradient-to-b from-foreground to-foreground/60 bg-clip-text text-transparent">
-            Crafting digital <br className="hidden md:block" /> perfection.
-          </h1>
-          <p className="max-w-[600px] mx-auto text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed">
-            I translate complex ideas into seamless user interfaces. Focused on
-            performance, accessibility, and modern aesthetics.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              size="lg"
-              className="rounded-full shadow-lg shadow-primary/20 h-12 px-8 text-base"
-              onClick={scrollToProjects}
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-block px-3 py-1 mb-6 text-xs font-medium tracking-wider text-primary uppercase bg-primary/10 rounded-full border border-primary/20"
             >
-              View Work
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="rounded-full backdrop-blur-sm h-12 px-8 text-base bg-background/50"
-              onClick={scrollToContact}
-            >
-              Contact Me
-            </Button>
-          </div>
-        </motion.div>
+              Available for hire
+            </motion.span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 bg-gradient-to-b from-foreground to-foreground/60 bg-clip-text text-transparent">
+              Hi, I'm Rayat. <br />I build things for the web.
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+              A Full Stack Developer focusing on building accessible,
+              pixel-perfect, and performant web experiences.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
+              <Button
+                size="lg"
+                className="rounded-full shadow-lg shadow-primary/20 h-12 px-8 text-base"
+                onClick={scrollToProjects}
+              >
+                View Work
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full backdrop-blur-sm h-12 px-8 text-base bg-background/50"
+                onClick={scrollToContact}
+              >
+                Contact Me
+              </Button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="flex-1 relative max-w-[400px] md:max-w-[500px]"
+            initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="relative aspect-square rounded-full border-2 border-primary/20 p-2 md:p-4">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-full blur-3xl -z-10" />
+              <div className="rounded-full overflow-hidden w-full h-full border border-primary/10 bg-muted/20 backdrop-blur-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80&w=2667&auto=format&fit=crop"
+                  alt="Rayat Profile"
+                  className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       <motion.div

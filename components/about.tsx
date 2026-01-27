@@ -58,23 +58,10 @@ export function About() {
                 web, which evolved into a career building full-stack
                 applications. I advocate for clean code and pragmatic solutions.
               </p>
-            </div>
-
-            <div className="mt-8">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">
-                Tech Stack
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, i) => (
-                  <Badge
-                    key={i}
-                    variant="outline"
-                    className="px-3 py-1 text-sm font-normal"
-                  >
-                    {skill}
-                  </Badge>
-                ))}
-              </div>
+              <p>
+                When I&apos;m not coding, you can find me reading about new tech
+                trends, contributing to open source, or exploring the outdoors.
+              </p>
             </div>
           </motion.div>
         </div>
