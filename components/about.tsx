@@ -48,19 +48,21 @@ export function About() {
             <h2 className="text-3xl font-bold tracking-tight mb-6">About Me</h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
-                I am a passionate developer who loves to create software that
-                intersects beautiful design with robust engineering. With a
-                strong foundation in modern web technologies, I aim to build
-                applications that are fast, accessible, and user-friendly.
+                I am an aspiring Software Engineer and final-semester Mechanical
+                Engineering student at BUET. My journey is defined by a unique
+                blend of engineering precision and a deep passion for software
+                development.
               </p>
               <p>
-                My journey started with a curiosity for how things work on the
-                web, which evolved into a career building full-stack
-                applications. I advocate for clean code and pragmatic solutions.
+                I specialize in building scalable systems, AI-driven
+                applications, and efficient backend architectures. My experience
+                spans full-stack development, cloud computing with AWS and GCP,
+                and machine learning.
               </p>
               <p>
-                When I&apos;m not coding, you can find me reading about new tech
-                trends, contributing to open source, or exploring the outdoors.
+                Whether it&apos;s optimizing complex algorithms or designing
+                intuitive user interfaces, I bring a problem-solving mindset and
+                a commitment to writing clean, maintainable code.
               </p>
             </div>
           </motion.div>

@@ -40,11 +40,13 @@ export function Hero() {
               Available for hire
             </motion.span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 bg-gradient-to-b from-foreground to-foreground/60 bg-clip-text text-transparent">
-              Hi, I'm Rayat. <br />I build things for the web.
+              Hi, I&apos;m Zul Ikram Musaddik Rayat. <br />
+              Software Engineer.
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
-              A Full Stack Developer focusing on building accessible,
-              pixel-perfect, and performant web experiences.
+              Aspiring Software Engineer and final-semester Mechanical
+              Engineering student at BUET. Expert in building scalable systems
+              and AI solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
               <Button
