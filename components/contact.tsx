@@ -46,15 +46,20 @@ export function Contact() {
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <Mail className="w-5 h-5 text-primary" />
                   <a
-                    href="mailto:rayat.zulikram@gmail.com"
+                    href="mailto:rayathossain49@gmail.com"
                     className="hover:text-primary transition-colors"
                   >
-                    rayat.zulikram@gmail.com
+                    rayathossain49@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span>+880 1521-579730</span>
+                  <a
+                    href="tel:+8801580863471"
+                    className="hover:text-primary transition-colors"
+                  >
+                    +880 1580-863471
+                  </a>
                 </div>
                 <div className="flex items-center gap-3 text-muted-foreground">
                   <MapPin className="w-5 h-5 text-primary" />

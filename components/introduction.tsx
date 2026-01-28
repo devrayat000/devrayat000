@@ -36,7 +36,7 @@ export function Introduction() {
               >
                 <div className="h-[1px] w-12 bg-primary/50" />
                 <span className="text-sm font-medium tracking-widest text-primary uppercase">
-                  Software Engineer
+                  &lt; Engineer / Developer / Leader /&gt;
                 </span>
               </motion.div>
 
@@ -107,7 +107,7 @@ export function Introduction() {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="mailto:rayat.zulikram@gmail.com"
+                  href="mailto:rayathossain49@gmail.com"
                   className="p-2 rounded-full hover:bg-muted/50 transition-colors text-muted-foreground hover:text-foreground"
                 >
                   <Mail className="w-5 h-5" />

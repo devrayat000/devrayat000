@@ -5,7 +5,7 @@ export function Footer() {
         <p>&copy; {new Date().getFullYear()} Rayat.dev. All rights reserved.</p>
         <div className="flex gap-4 mt-2 md:mt-0">
           <a
-            href="https://github.com/zim-rayat"
+            href="https://github.com/devrayat000"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
@@ -13,7 +13,7 @@ export function Footer() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/zimrayat"
+            href="https://linkedin.com/in/zim-rayat"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
