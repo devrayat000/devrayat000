@@ -13,6 +13,42 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
+    title: "COOKit",
+    description:
+      "A meal-discovery app to browse and search thousands of recipes by cuisine and category, each linked to step-by-step cooking videos.",
+    tags: ["SvelteKit", "TypeScript", "Tailwind CSS", "TheMealDB"],
+    image:
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2670&auto=format&fit=crop",
+    link: "https://cookit.rayat.dev/",
+  },
+  {
+    title: "Frontend Daily",
+    description:
+      "A curated platform of frontend design inspiration and development resources, with filtering across frameworks like React, Next.js, Vue and GraphQL.",
+    tags: ["Next.js", "TypeScript", "GraphQL", "Vercel"],
+    image:
+      "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2664&auto=format&fit=crop",
+    link: "https://frontendaily.rayat.dev/",
+  },
+  {
+    title: "Medical RAG Chat",
+    description:
+      "An AI medical assistant using a Retrieval-Augmented Generation pipeline to answer health questions grounded in trusted medical sources.",
+    tags: ["Next.js", "RAG", "LLM", "AI"],
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
+    link: "https://medbot.rayat.dev/",
+  },
+  {
+    title: "Zmol",
+    description:
+      "A fast, free URL shortener that turns long links into concise, shareable ones with built-in click tracking and analytics.",
+    tags: ["Next.js 15", "TypeScript", "Analytics"],
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
+    link: "https://zmol.rayat.dev/",
+  },
+  {
     title: "TopperOn Doubts AI",
     description:
       "AI-powered student doubt solver with a full RAG pipeline, reducing query latency by 35% and improving context relevance.",
@@ -52,6 +88,33 @@ const projects = [
     link: "#",
     github: "#",
   },
+  {
+    title: "AIVIBLE",
+    description:
+      "An AI-visibility platform for Japan travel — pairing an AI itinerary planner (chat with Shirube) with tools that help local businesses get discovered by AI chatbots like ChatGPT and Gemini.",
+    tags: ["Next.js", "AI", "LLM", "SaaS"],
+    image:
+      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=2670&auto=format&fit=crop",
+    link: "https://aivible.tokyo/",
+  },
+  {
+    title: "SnapShelf",
+    description:
+      "A lightweight, always-on-top clipboard manager for Windows that keeps your recent snippets a keystroke away. Published on the Microsoft Store.",
+    tags: ["Slint", "Rust", "Windows"],
+    image:
+      "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=2670&auto=format&fit=crop",
+    link: "https://apps.microsoft.com/store/detail/9N0CW4WQK8B1?cid=DevShareMCLPCS",
+  },
+  {
+    title: "Focus Stream",
+    description:
+      "A local-first Windows time tracker that turns your activity into a private, AI-written focus journal — powered by on-device Llama 3.2, with dashboards, weekly reports and a distraction-blocking Focus Mode.",
+    tags: ["Tauri", "Rust", "React", "Llama 3.2"],
+    image:
+      "https://images.unsplash.com/photo-1501139083538-0139583c060f?q=80&w=2670&auto=format&fit=crop",
+    link: "https://apps.microsoft.com/store/detail/9P9VF2T58XGX?cid=DevShareMCLPCS",
+  },
 ];
 
 export function Projects() {
@@ -74,13 +137,19 @@ export function Projects() {
             Featured Work
           </h2>
           <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed">
-            A selection of projects where I've architected scalable solutions
-            and solved complex engineering problems.
+            A selection of projects where I&apos;ve architected scalable
+            solutions and solved complex engineering problems.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {projects.map((project, index) => (
+          {projects.map((project, index) => {
+            const link = "link" in project ? project.link : undefined;
+            const github = "github" in project ? project.github : undefined;
+            const hasLink = Boolean(link) && link !== "#";
+            const hasCode = Boolean(github) && github !== "#";
+
+            return (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 40 }}
@@ -90,32 +159,38 @@ export function Projects() {
               className="group"
             >
               <div className="relative overflow-hidden rounded-2xl aspect-[16/9] mb-6 border border-border/50 bg-muted">
-                <div className="absolute inset-0 z-10 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                  <Button variant="default" className="rounded-full" asChild>
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <ExternalLink className="w-4 h-4" /> Visit
-                    </a>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="rounded-full bg-background/20 backdrop-blur-md border-white/20 text-white hover:bg-white/20"
-                    asChild
-                  >
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <Github className="w-4 h-4" /> Code
-                    </a>
-                  </Button>
-                </div>
+                {(hasLink || hasCode) && (
+                  <div className="absolute inset-0 z-10 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
+                    {hasLink && (
+                      <Button variant="default" className="rounded-full" asChild>
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          <ExternalLink className="w-4 h-4" /> Visit
+                        </a>
+                      </Button>
+                    )}
+                    {hasCode && (
+                      <Button
+                        variant="outline"
+                        className="rounded-full bg-background/20 backdrop-blur-md border-white/20 text-white hover:bg-white/20"
+                        asChild
+                      >
+                        <a
+                          href={github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2"
+                        >
+                          <Github className="w-4 h-4" /> Code
+                        </a>
+                      </Button>
+                    )}
+                  </div>
+                )}
 
                 <img
                   src={project.image}
@@ -147,7 +222,8 @@ export function Projects() {
                 </div>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
