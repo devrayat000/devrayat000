@@ -137,7 +137,7 @@ export function Introduction() {
                 initial={{ x: 50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.8, duration: 0.8 }}
-                className="absolute bottom-12 right-0 md:-right-12 z-20 bg-background/80 backdrop-blur-md border border-border/50 p-6 max-w-xs shadow-2xl"
+                className="absolute bottom-12 right-0 not-md:-right-12 z-20 bg-background/80 backdrop-blur-md border border-border/50 p-6 max-w-xs shadow-2xl"
               >
                 <div className="space-y-4">
                   <div>
@@ -156,9 +156,7 @@ export function Introduction() {
                     <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">
                       Education
                     </p>
-                    <p className="text-sm font-medium">
-                      B.Sc ME @ BUET (Final Sem)
-                    </p>
+                    <p className="text-sm font-medium">B.Sc ME @ BUET</p>
                   </div>
                 </div>
               </motion.div>

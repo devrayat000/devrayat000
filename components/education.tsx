@@ -8,9 +8,9 @@ const educationList = [
   {
     school: "Bangladesh University of Engineering and Technology (BUET)",
     degree: "B.Sc in Mechanical Engineering",
-    year: "Final Semester",
+    year: "2026",
     description:
-      "CGPA: 3.08/4.00. Former Class Representative. Combining engineering principles with software development expertise.",
+      "CGPA: 3.10/4.00. Former Class Representative. Combining engineering principles with software development expertise.",
     tags: ["Mechanical Engineering", "Programming", "Leadership"],
   },
   {
