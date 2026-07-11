@@ -1,24 +1,30 @@
 "use client";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import zmol from "@/assets/projects/zmol.jpeg";
+import cookit from "@/assets/projects/cookit.jpeg";
+import focusStream from "@/assets/projects/focus-stream.jpeg";
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  tags: string[];
+  image: string;
+  /** Optional trailer. Plays on hover; `image` acts as the thumbnail/poster. */
+  video?: string;
+  link?: string;
+  github?: string;
+};
+
+const projects: Project[] = [
   {
     title: "COOKit",
     description:
       "A meal-discovery app to browse and search thousands of recipes by cuisine and category, each linked to step-by-step cooking videos.",
     tags: ["SvelteKit", "TypeScript", "Tailwind CSS", "TheMealDB"],
-    image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2670&auto=format&fit=crop",
+    image: cookit.src,
     link: "https://cookit.rayat.dev/",
   },
   {
@@ -44,8 +50,7 @@ const projects = [
     description:
       "A fast, free URL shortener that turns long links into concise, shareable ones with built-in click tracking and analytics.",
     tags: ["Next.js 15", "TypeScript", "Analytics"],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2670&auto=format&fit=crop",
+    image: zmol.src,
     link: "https://zmol.rayat.dev/",
   },
   {
@@ -111,8 +116,7 @@ const projects = [
     description:
       "A local-first Windows time tracker that turns your activity into a private, AI-written focus journal — powered by on-device Llama 3.2, with dashboards, weekly reports and a distraction-blocking Focus Mode.",
     tags: ["Tauri", "Rust", "React", "Llama 3.2"],
-    image:
-      "https://images.unsplash.com/photo-1501139083538-0139583c060f?q=80&w=2670&auto=format&fit=crop",
+    image: focusStream.src,
     link: "https://apps.microsoft.com/store/detail/9P9VF2T58XGX?cid=DevShareMCLPCS",
   },
 ];
@@ -143,89 +147,126 @@ export function Projects() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {projects.map((project, index) => {
-            const link = "link" in project ? project.link : undefined;
-            const github = "github" in project ? project.github : undefined;
-            const hasLink = Boolean(link) && link !== "#";
-            const hasCode = Boolean(github) && github !== "#";
-
-            return (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group"
-            >
-              <div className="relative overflow-hidden rounded-2xl aspect-[16/9] mb-6 border border-border/50 bg-muted">
-                {(hasLink || hasCode) && (
-                  <div className="absolute inset-0 z-10 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                    {hasLink && (
-                      <Button variant="default" className="rounded-full" asChild>
-                        <a
-                          href={link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2"
-                        >
-                          <ExternalLink className="w-4 h-4" /> Visit
-                        </a>
-                      </Button>
-                    )}
-                    {hasCode && (
-                      <Button
-                        variant="outline"
-                        className="rounded-full bg-background/20 backdrop-blur-md border-white/20 text-white hover:bg-white/20"
-                        asChild
-                      >
-                        <a
-                          href={github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2"
-                        >
-                          <Github className="w-4 h-4" /> Code
-                        </a>
-                      </Button>
-                    )}
-                  </div>
-                )}
-
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-
-              <div className="space-y-3">
-                <div className="flex justify-between items-start">
-                  <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                </div>
-
-                <p className="text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs font-mono text-muted-foreground/80 border border-border px-2 py-1 rounded-md"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-            );
-          })}
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} index={index} />
+          ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const { link, github, video, image } = project;
+  const hasLink = Boolean(link) && link !== "#";
+  const hasCode = Boolean(github) && github !== "#";
+
+  // With no image, seek to an early frame so the video's own frame renders as
+  // the thumbnail instead of a blank/black poster.
+  const videoSrc = video && !image ? `${video}#t=0.1` : video;
+
+  const handleMouseEnter = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.play().catch(() => {});
+  };
+
+  const handleMouseLeave = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    el.pause();
+    el.currentTime = 0;
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1, duration: 0.6 }}
+      className="group"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <div className="relative overflow-hidden rounded-2xl aspect-3/2 mb-6 border border-border/50 bg-muted">
+        {(hasLink || hasCode) && (
+          <div className="absolute inset-0 z-10 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
+            {hasLink && (
+              <Button variant="default" className="rounded-full" asChild>
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <ExternalLink className="w-4 h-4" /> Visit
+                </a>
+              </Button>
+            )}
+            {hasCode && (
+              <Button
+                variant="outline"
+                className="rounded-full bg-background/20 backdrop-blur-md border-white/20 text-white hover:bg-white/20"
+                asChild
+              >
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  <Github className="w-4 h-4" /> Code
+                </a>
+              </Button>
+            )}
+          </div>
+        )}
+
+        {video ? (
+          <video
+            ref={videoRef}
+            src={videoSrc}
+            poster={image}
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+          />
+        ) : (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={image}
+            alt={project.title}
+            className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+          />
+        )}
+      </div>
+
+      <div className="space-y-3">
+        <div className="flex justify-between items-start">
+          <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">
+            {project.title}
+          </h3>
+        </div>
+
+        <p className="text-muted-foreground leading-relaxed">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 pt-2">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-xs font-mono text-muted-foreground/80 border border-border px-2 py-1 rounded-md"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </motion.div>
   );
 }
