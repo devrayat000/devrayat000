@@ -26,6 +26,8 @@ const projects: Project[] = [
     tags: ["SvelteKit", "TypeScript", "Tailwind CSS", "TheMealDB"],
     image: cookit.src,
     link: "https://cookit.rayat.dev/",
+    github:
+      "https://github.com/devrayat000/portfolio-projects/tree/master/apps/cookit",
   },
   {
     title: "Frontend Daily",
@@ -35,6 +37,7 @@ const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2664&auto=format&fit=crop",
     link: "https://frontendaily.rayat.dev/",
+    github: "https://github.com/devrayat000/frontenddaily",
   },
   {
     title: "Medical RAG Chat",
@@ -44,6 +47,7 @@ const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
     link: "https://medbot.rayat.dev/",
+    github: "https://github.com/devrayat000/medbot",
   },
   {
     title: "Zmol",
@@ -52,6 +56,7 @@ const projects: Project[] = [
     tags: ["Next.js 15", "TypeScript", "Analytics"],
     image: zmol.src,
     link: "https://zmol.rayat.dev/",
+    github: "https://github.com/devrayat000/zmol",
   },
   {
     title: "TopperOn Doubts AI",
@@ -60,7 +65,7 @@ const projects: Project[] = [
     tags: ["FastAPI", "Next.js", "RAG", "Pinecone", "Redis"],
     image:
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2664&auto=format&fit=crop",
-    link: "#",
+    link: "https://topperon.com",
     github: "#",
   },
   {
@@ -91,7 +96,7 @@ const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1547027072-332eed9f9998?q=80&w=2670&auto=format&fit=crop",
     link: "#",
-    github: "#",
+    github: "https://github.com/devrayat000/video-processing",
   },
   {
     title: "AIVIBLE",
@@ -110,6 +115,7 @@ const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?q=80&w=2670&auto=format&fit=crop",
     link: "https://apps.microsoft.com/store/detail/9N0CW4WQK8B1?cid=DevShareMCLPCS",
+    github: "https://github.com/devrayat000/quick-dock",
   },
   {
     title: "Focus Stream",
