@@ -6,6 +6,7 @@ import { ExternalLink, Github, Briefcase, User, Layers } from "lucide-react";
 import zmol from "@/assets/projects/zmol.jpeg";
 import cookit from "@/assets/projects/cookit.jpeg";
 import focusStream from "@/assets/projects/focus-stream.jpeg";
+import scabieSense from "@/assets/projects/scabiesense.jpeg";
 
 export type Category = "professional" | "personal";
 
@@ -33,13 +34,13 @@ const projects: Project[] = [
     link: "https://truenews.wasmer.app/",
   },
   {
-    title: "Scabiesense",
+    title: "ScabieSense",
     description:
       "AI-driven mobile health application for early detection and clinical assessment of scabies skin conditions, developed with custom deep learning models for BUET IAT.",
     tags: ["React Native", "Expo", "TypeScript", "Deep Learning", "Mobile App"],
     category: "professional",
-    image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2670&auto=format&fit=crop",
+    image: scabieSense.src,
+    github: "https://github.com/devrayat000/scabies-net",
   },
   {
     title: "Rover Camera Feed",
@@ -84,7 +85,7 @@ const projects: Project[] = [
     description:
       "Scalable video processing system using Go and Redis Streams. Handles failure modes and distributed processing with FFmpeg.",
     tags: ["Go", "Redis Streams", "FFmpeg", "React"],
-    category: "professional",
+    category: "personal",
     image:
       "https://images.unsplash.com/photo-1547027072-332eed9f9998?q=80&w=2670&auto=format&fit=crop",
     github: "https://github.com/devrayat000/video-processing",
@@ -104,7 +105,7 @@ const projects: Project[] = [
     description:
       "Interactive physics and mathematical calculator web platform offering dynamic formula visualizers and real-time scientific computation tools.",
     tags: ["React", "TypeScript", "Vite", "GraphQL", "Tailwind CSS"],
-    category: "personal",
+    category: "professional",
     image:
       "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2670&auto=format&fit=crop",
     link: "https://phycalc.rayat.dev/",
@@ -158,7 +159,7 @@ const projects: Project[] = [
     description:
       "An AI medical assistant using a Retrieval-Augmented Generation pipeline to answer health questions grounded in trusted medical sources.",
     tags: ["Next.js", "RAG", "LLM", "AI"],
-    category: "personal",
+    category: "professional",
     image:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
     link: "https://medbot.rayat.dev/",
@@ -213,7 +214,7 @@ export function Projects() {
 
   const filteredProjects = projects.filter(
     (project) =>
-      activeCategory === "all" || project.category === activeCategory
+      activeCategory === "all" || project.category === activeCategory,
   );
 
   return (
@@ -427,4 +428,3 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     </motion.div>
   );
 }
-
