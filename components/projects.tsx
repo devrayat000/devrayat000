@@ -7,6 +7,10 @@ import zmol from "@/assets/projects/zmol.jpeg";
 import cookit from "@/assets/projects/cookit.jpeg";
 import focusStream from "@/assets/projects/focus-stream.jpeg";
 import scabieSense from "@/assets/projects/scabiesense.jpeg";
+import matrahin from "@/assets/projects/matrahin.jpeg";
+import rag from "@/assets/projects/rag.jpeg";
+import aivible from "@/assets/projects/aivible.jpeg";
+import topperonAi from "@/assets/projects/doubts-ai.jpeg";
 
 export type Category = "professional" | "personal";
 
@@ -58,8 +62,7 @@ const projects: Project[] = [
       "AI-powered student doubt solver with a full RAG pipeline, reducing query latency by 35% and improving context relevance.",
     tags: ["FastAPI", "Next.js", "RAG", "Pinecone", "Redis"],
     category: "professional",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2664&auto=format&fit=crop",
+    image: topperonAi.src,
     link: "https://topperon.com",
   },
   {
@@ -96,9 +99,8 @@ const projects: Project[] = [
       "An AI-visibility platform for Japan travel — pairing an AI itinerary planner (chat with Shirube) with tools that help local businesses get discovered by AI chatbots like ChatGPT and Gemini.",
     tags: ["Next.js", "AI", "LLM", "SaaS"],
     category: "professional",
-    image:
-      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=2670&auto=format&fit=crop",
-    link: "https://aivible.tokyo/",
+    image: aivible.src,
+    link: "https://ai-audit-seven.vercel.app/",
   },
   {
     title: "Matrahin",
@@ -106,9 +108,8 @@ const projects: Project[] = [
       "Interactive physics and mathematical calculator web platform offering dynamic formula visualizers and real-time scientific computation tools.",
     tags: ["React", "TypeScript", "Vite", "GraphQL", "Tailwind CSS"],
     category: "professional",
-    image:
-      "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2670&auto=format&fit=crop",
-    link: "https://phycalc.rayat.dev/",
+    image: matrahin.src,
+    link: "https://matrahin.com/",
     github: "https://github.com/devrayat000/matrahin",
   },
   {
@@ -155,14 +156,13 @@ const projects: Project[] = [
     github: "https://github.com/devrayat000/frontenddaily",
   },
   {
-    title: "Medical RAG Chat",
+    title: "TextBook RAG",
     description:
-      "An AI medical assistant using a Retrieval-Augmented Generation pipeline to answer health questions grounded in trusted medical sources.",
+      "An AI assistant using a Retrieval-Augmented Generation pipeline to answer educations questions grounded in trusted textbook sources.",
     tags: ["Next.js", "RAG", "LLM", "AI"],
     category: "professional",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
-    link: "https://medbot.rayat.dev/",
+    image: rag.src,
+    link: "https://doubts.rayat.dev/",
     github: "https://github.com/devrayat000/medbot",
   },
   {
