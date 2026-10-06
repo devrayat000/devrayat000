@@ -6,19 +6,19 @@ import { Briefcase } from "lucide-react";
 
 const experienceList = [
   {
-    role: "Software Engineer - L1 (Part-time)",
+    role: "Software Engineering Intern - Backend & AI Systems",
     company: "RubizCode IT",
     date: "May 2025 – Sept 2025",
     description:
-      "Leading development of scalable Ed-Tech and AI-integrated software. Architected cloud-based microservices using NestJS, Prisma, PostgreSQL, and Redis. Incorporated real-time features with WebSockets and contributed to DevOps pipeline with Docker and Traefik.",
-    skills: ["NestJS", "Prisma", "PostgreSQL", "Redis", "Docker", "WebSockets"],
+      "Engineered production RAG pipelines with FastAPI, LangChain, and vector retrieval, reducing query latency by 35%. Architected backend microservices using NestJS, PostgreSQL, and Redis caching; containerized deployments via Docker and GCP CI/CD pipelines.",
+    skills: ["NestJS", "FastAPI", "PostgreSQL", "Redis", "Docker", "GCP", "RAG Pipelines"],
   },
   {
     role: "Software Engineer - Web (Part-time)",
     company: "Biology Haters",
     date: "Dec 2023 - Jul 2024",
     description:
-      "Built Taalaash, a Bangla academic search engine with OCR + ML. Enhanced UI/UX with Next.js, React, and Tailwind. Tuned Tesseract for 98% Bangla OCR accuracy and optimized system efficiency by 95% using caching.",
+      "Built Taalaash, a Bangla academic search engine indexing 20,000+ textbook pages. Tuned Tesseract OCR models achieving 98% Bangla accuracy, integrated Algolia/Pinecone reranking, and optimized retrieval efficiency via Redis caching.",
     skills: ["Next.js", "FastAPI", "Tesseract OCR", "Algolia", "PostgreSQL"],
   },
   {
@@ -26,8 +26,8 @@ const experienceList = [
     company: "Ronon (ACS EdTech)",
     date: "Dec 2021 - Dec 2023",
     description:
-      "Designed core engine for Ronon, growing to 80k users. Founded and led development of Matrahin, an interactive physics simulation tool. Collaborated on scalable solutions using Django, Node.js, and React.",
-    skills: ["Django", "React", "Python", "Physics Simulations"],
+      "Designed core engine for Ronon doubt-solving platform scaling to 80k+ users. Founded and led development of Matrahin, an interactive physics computation tool. Collaborated on scalable solutions using Django, Node.js, and React.",
+    skills: ["Django", "React", "Python", "PostgreSQL", "Physics Simulations"],
   },
 ];
 
@@ -59,7 +59,7 @@ export function Experience() {
             Professional Experience
           </h2>
           <p className="text-muted-foreground max-w-2xl text-lg">
-            Over 4 years of building production-grade software.
+            Production engineering experience building scalable microservices, low-latency queues, and AI systems.
           </p>
         </motion.div>
 

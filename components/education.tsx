@@ -7,18 +7,26 @@ import { Calendar, GraduationCap } from "lucide-react";
 const educationList = [
   {
     school: "Bangladesh University of Engineering and Technology (BUET)",
-    degree: "B.Sc in Mechanical Engineering",
-    year: "2026",
+    degree: "M.Sc. in Data Science, Department of CSE",
+    year: "2026 – Present",
     description:
-      "CGPA: 3.10/4.00. Former Class Representative. Combining engineering principles with software development expertise.",
-    tags: ["Mechanical Engineering", "Programming", "Leadership"],
+      "Graduate studies in computer science and data systems. Full-time professional software engineering availability.",
+    tags: ["Data Science", "Computer Science & Engineering", "BUET CSE"],
+  },
+  {
+    school: "Bangladesh University of Engineering and Technology (BUET)",
+    degree: "B.Sc. in Mechanical Engineering",
+    year: "Jun 2026",
+    description:
+      "CGPA: 3.10/4.00. Former Class Representative. Rigorous analytical, mathematical, and computational systems modeling background.",
+    tags: ["Mechanical Engineering", "Computational Modeling", "Leadership"],
   },
   {
     school: "Notre Dame College, Dhaka",
     degree: "Higher Secondary Certificate (HSC)",
     year: "2020",
     description:
-      "GPA: 5.00. Built a strong foundation in science and mathematics.",
+      "GPA: 5.00 / 5.00. Built a strong foundation in science and advanced mathematics.",
     tags: ["Science", "Mathematics"],
   },
 ];

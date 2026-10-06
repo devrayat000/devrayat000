@@ -51,11 +51,11 @@ export function AboutDetailed() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">The Engineer</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Final-semester Mechanical Engineering student at{" "}
-                  <strong>BUET</strong>. My academic background instills a
-                  rigorous analytical approach to problem-solving. I apply
-                  engineering first principles to software architecture,
-                  ensuring robustness and scalability in every system I design.
+                  M.Sc. in Data Science student at <strong>BUET CSE</strong> and
+                  Mechanical Engineering graduate from <strong>BUET</strong>. My
+                  academic background instills rigorous mathematical, analytical,
+                  and systems modeling grounding. I apply first principles to
+                  software architecture, ensuring robustness and concurrency safety.
                 </p>
               </div>
             </div>
@@ -79,11 +79,11 @@ export function AboutDetailed() {
                 </div>
                 <h3 className="text-2xl font-bold mb-4">The Builder</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Self-taught Software Engineer with 4+ years of experience.
-                  From building <strong>AI-powered</strong> ed-tech platforms to
-                  optimizing <strong>cloud infrastructure</strong>, I love
-                  turning complex requirements into elegant code. I specialize
-                  in the Modern Stack (Next.js, Python, Cloud).
+                  Software engineer focused on distributed backends, microservices,
+                  and AI pipelines. From orchestrating polyglot services and
+                  low-latency queues to building offline Rust desktop apps and
+                  high-scale search engines, I specialize in shipping resilient,
+                  scalable code.
                 </p>
               </div>
             </div>

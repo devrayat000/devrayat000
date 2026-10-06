@@ -28,6 +28,79 @@ export type Project = {
 
 const projects: Project[] = [
   {
+    title: "Kabbo (Distributed Microservices ERP/CRM)",
+    description:
+      "Multi-tenant B2B polyglot microservices platform engineered in Go, TypeScript (Hono), and Python (FastAPI). Traefik v3 API gateway with zero-hop ES256 JWT validation, per-domain PostgreSQL schema isolation with individual role logins, Redis Streams domain event bus, BullMQ workers, and MinIO storage across 13 orchestrated containers.",
+    tags: [
+      "Go",
+      "Hono",
+      "FastAPI",
+      "Traefik v3",
+      "PostgreSQL",
+      "Redis Streams",
+      "BullMQ",
+      "Docker",
+    ],
+    category: "professional",
+    image:
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2668&auto=format&fit=crop",
+    github: "https://github.com/devrayat000/distributed-system",
+  },
+  {
+    title: "Counsel (Telemedicine Platform)",
+    description:
+      "Audio-only anonymous telemedicine service for mental health counselling. Engineered with React Router v8 SPA, end-to-end typed Hono RPC on Bun, PostgreSQL + Drizzle ORM, DB-backed session cookies with Argon2id auth, and peer-to-peer WebRTC audio over a self-hosted PeerServer.",
+    tags: [
+      "React Router v8",
+      "Hono RPC",
+      "Bun",
+      "WebRTC",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "PeerJS",
+    ],
+    category: "professional",
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
+    github: "https://github.com/devrayat000/counsel",
+  },
+  {
+    title: "Retina AI (Distributed Ingestion Pipeline)",
+    description:
+      "Decoupled document processing and vectorization architecture. Node.js API enqueues jobs to Redis (BullMQ); horizontally scalable Python workers extract and OCR pages with PyMuPDF and Tesseract; downstream embedding queue delivers structured vectors to S3-compatible storage with complete failure isolation.",
+    tags: [
+      "Python",
+      "Node.js",
+      "BullMQ",
+      "Redis",
+      "PyMuPDF",
+      "Tesseract OCR",
+      "S3",
+      "Docker",
+    ],
+    category: "professional",
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2664&auto=format&fit=crop",
+    github: "https://github.com/devrayat000/rag-ingestion-worker",
+  },
+  {
+    title: "Agentic Shop",
+    description:
+      "Fully conversational storefront where customers browse, manage carts, apply discounts, and checkout via an AI agent. 33 shop tools execute in the browser via Mastra client tools with generative UI and human-in-the-loop approvals, backed by MedusaJS v2 and Gemini 3.1 Flash.",
+    tags: [
+      "React Router v8",
+      "Mastra",
+      "MedusaJS v2",
+      "Gemini 3.1",
+      "Tailwind CSS",
+      "Vite",
+    ],
+    category: "personal",
+    image:
+      "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2670&auto=format&fit=crop",
+    github: "https://github.com/devrayat000/agentic-shop",
+  },
+  {
     title: "TrueNews",
     description:
       "AI-powered news verification and aggregation backend platform engineered for real-time media analysis, source credibility scoring, and automated fact-checking.",

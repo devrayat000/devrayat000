@@ -3,6 +3,7 @@ import { AboutDetailed } from "@/components/about-detailed";
 import { Experience } from "@/components/experience";
 import { Highlights } from "@/components/highlights";
 import { Projects } from "@/components/projects";
+import { GithubActivity } from "@/components/github-activity";
 import { Skills } from "@/components/skills";
 import { Education } from "@/components/education";
 import { Certifications } from "@/components/certifications";
@@ -16,6 +17,7 @@ export default function Home() {
       <Experience />
       <Highlights />
       <Projects />
+      <GithubActivity />
       <Skills />
       <Education />
       <Certifications />

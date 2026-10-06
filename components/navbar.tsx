@@ -14,9 +14,9 @@ import { Menu } from "lucide-react";
 const navItems = [
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
+  { name: "Activity", href: "#activity" },
   { name: "Skills", href: "#skills" },
   { name: "Education", href: "#education" },
-  { name: "Achievements", href: "#achievements" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -49,7 +49,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8 items-center">
+        <nav className="hidden md:flex gap-6 items-center">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -64,8 +64,19 @@ export function Navbar() {
               {item.name}
             </Link>
           ))}
-          <Button size="sm" className="rounded-full">
-            Resume
+          <a
+            href="https://v2.rayat.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs px-2.5 py-1 rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors font-mono"
+            title="Academic, Research & PhD Portfolio"
+          >
+            Research / PhD ↗
+          </a>
+          <Button asChild size="sm" className="rounded-full">
+            <a href="/resume.pdf" download="Zul_Ikram_Rayat_CV.pdf">
+              Resume
+            </a>
           </Button>
         </nav>
 
@@ -95,7 +106,19 @@ export function Navbar() {
                   {item.name}
                 </Link>
               ))}
-              <Button className="w-full">Resume</Button>
+              <a
+                href="https://v2.rayat.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm px-3 py-2 rounded-lg border border-primary/30 text-primary hover:bg-primary/10 transition-colors font-mono text-center"
+              >
+                Research & PhD Portfolio (v2) ↗
+              </a>
+              <Button asChild className="w-full">
+                <a href="/resume.pdf" download="Zul_Ikram_Rayat_CV.pdf">
+                  Download Resume
+                </a>
+              </Button>
             </div>
           </SheetContent>
         </Sheet>

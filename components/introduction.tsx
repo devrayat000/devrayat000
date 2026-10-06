@@ -54,10 +54,10 @@ export function Introduction() {
               transition={{ delay: 0.4 }}
               className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl"
             >
-              Aspiring Software Engineer and final-semester Mechanical
-              Engineering student at BUET. I blend engineering precision with
-              deep technical expertise to build scalable systems, AI-driven
-              applications, and robust backend architectures.
+              M.Sc. in Data Science student at BUET CSE &amp; Mechanical
+              Engineering graduate from BUET. I blend rigorous systems
+              modeling grounding with production engineering to build resilient
+              microservices, low-latency queues, and AI pipelines.
             </motion.p>
 
             <motion.div
@@ -67,11 +67,11 @@ export function Introduction() {
               className="space-y-4 pt-4 border-l-2 border-primary/20 pl-6"
             >
               <p className="text-muted-foreground">
-                My journey combines the analytical rigor of mechanical
-                engineering with a passion for code. From optimizing search
-                algorithms to designing intuitive UIs, I bring a holistic
-                problem-solving mindset. Expert in building cloud-native
-                microservices and intelligent production-ready software.
+                My approach combines the mathematical rigor of systems modeling
+                with practical software engineering. From orchestrating
+                multi-tenant polyglot microservices with zero-hop JWT gateways to
+                stateless distributed OCR/embedding workers and local Rust runtimes,
+                I focus on correctness, throughput, and clean contracts.
               </p>
             </motion.div>
 
