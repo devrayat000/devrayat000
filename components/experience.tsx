@@ -14,6 +14,14 @@ const experienceList = [
     skills: ["NestJS", "FastAPI", "PostgreSQL", "Redis", "Docker", "GCP", "RAG Pipelines"],
   },
   {
+    role: "Research Intern - Applied AI & Systems",
+    company: "Institute of Appropriate Technology (IAT), BUET",
+    date: "Oct 2024 – May 2025",
+    description:
+      "Engineered data pipelines and an on-device Python image classification inference engine for ScabieSense, deployed in a real-world field pilot among university dormitory residents. Built numerical deep-learning pipelines in PyTorch and TensorFlow for peer-reviewed IEEE research.",
+    skills: ["Python", "PyTorch", "TensorFlow", "React Native", "On-Device Inference", "Field Study"],
+  },
+  {
     role: "Software Engineer - Web (Part-time)",
     company: "Biology Haters",
     date: "Dec 2023 - Jul 2024",
